@@ -11,7 +11,7 @@ class ArchivoPage extends StatefulWidget {
 
 class _ArchivoPageState extends State<ArchivoPage> {
   String _path;
-  String _fileType="txt";
+  String _fileType = "txt";
   String contents;
 
   @override
@@ -23,36 +23,45 @@ class _ArchivoPageState extends State<ArchivoPage> {
             height: 40.0,
           ),
           new RaisedButton(
-
             child: Text("Buscar Archivo"),
-            onPressed: (){
+            onPressed: () {
               _openFileExplorer();
             },
             color: Colors.blue,
           ),
-        contents!=null? new ListTile(
-            title: Text(contents),
-          ):new Container()
+          contents != null
+              ? new ListTile(
+                  title: Text(contents),
+                )
+              : new Container()
         ],
       ),
     );
   }
 
   void _openFileExplorer() async {
-    _path = await FilePicker.getFilePath(type: FileType.custom, allowedExtensions: [_fileType]);
-      _path!=null? readCounter():null;
-
+    try {
+      _path = await FilePicker.getFilePath(
+          type: FileType.custom, allowedExtensions: [_fileType]);
+      _path != null ? readCounter() : null;
+    } catch (e) {
+      setState(() {
+        contents = "Mal archivo";
+      });
+    }
   }
 
   void readCounter() async {
-    final file = await File(_path);
-    // Leer el archivo
-    contents = await file.readAsString();
+    try {
+      final file = await File(_path);
+      // Leer el archivo
+      contents = await file.readAsString();
       print(contents);
-    setState(() {
-      
-    });
-    
-}
-
+      setState(() {});
+    } catch (e) {
+      setState(() {
+        contents = "Mal archivo";
+      });
+    }
+  }
 }
