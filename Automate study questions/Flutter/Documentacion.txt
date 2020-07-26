@@ -1,0 +1,16 @@
+Para este programa se instalaron:
+
+	- SDK de flutter: https://flutter.dev/docs/get-started/install/windows	
+	- Android studio: https://developer.android.com/studio/?gclid=CjwKCAjwsO_4BRBBEiwAyagRTdz8-zFl8wHIE8uOkgrzQvU1u_KKHTY93wVT-fVSfTlv0bX81MserhoCDZAQAvD_BwE&gclsrc=aw.ds
+	- VScode: https://code.visualstudio.com
+
+Guia para instalacion: https://www.youtube.com/watch?v=xeEp9opvVMM
+
+Paquetes:
+
+	- Manejo de archivos file_picker: https://pub.dev/packages/file_picker/versions/1.3.6
+	- Leer Archivo: https://pub.dev/packages/path_provider
+
+Generar apk: https://www.youtube.com/watch?v=qSn68_WLRKc
+
+	- flutter build apk
