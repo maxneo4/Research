@@ -9,8 +9,7 @@ class Questions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        pre(context),
-        next(context)
+        pre(context)
       ],
     );
   }
@@ -24,15 +23,4 @@ class Questions extends StatelessWidget {
     );
   }
 
-  Widget next(context) {
-
-    final datos = Provider.of<Datos>(context);
-
-    return FloatingActionButton(
-          onPressed: (){
-            datos.pos();
-            datos.notifi();
-          }
-    );
-  }
 }

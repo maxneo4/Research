@@ -1,6 +1,9 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:manejo_archivos/Widgets/Answer_widget.dart';
+import 'package:manejo_archivos/Widgets/Next_widget.dart';
 import 'package:manejo_archivos/Widgets/Question_widget.dart';
+import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'dart:io';
 
 import 'package:manejo_archivos/providers/Datos_provider.dart';
@@ -22,6 +25,8 @@ class _ArchivoPageState extends State<ArchivoPage> {
 
   @override
   Widget build(BuildContext context) {
+    final datos = Provider.of<Datos>(context);
+    final contador = Provider.of<Contador>(context, listen: false);
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -32,6 +37,8 @@ class _ArchivoPageState extends State<ArchivoPage> {
             child: Text("Buscar Archivo"),
             onPressed: () {
               hay=false;
+              contador.reset();
+              datos.reset();
               _openFileExplorer();
             },
             color: Colors.blue,
@@ -40,7 +47,21 @@ class _ArchivoPageState extends State<ArchivoPage> {
               ? new ListTile(
                   title: Text(contents),
                 )
-              : Questions(),
+              : new Container(
+                child: Column(
+                  children: <Widget>[
+                    Questions(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Answer_widget(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Next(),
+                  ],
+                )
+              ),
         ],
       ),
     );

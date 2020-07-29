@@ -35,4 +35,11 @@ void notifi(){
   notifyListeners();
 }
 
+void reset(){
+  _nq=[];
+  _q=[];
+  _a=[];
+  p=0;
+}
+
 }

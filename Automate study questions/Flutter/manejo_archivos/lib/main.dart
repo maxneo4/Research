@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/pages/page.dart';
+import 'package:manejo_archivos/providers/Answer_provider.dart';
+import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
             ChangeNotifierProvider(builder: (context)=>Datos()),
+            ChangeNotifierProvider(builder: (context)=>Answer()),
+            ChangeNotifierProvider(builder: (context)=>Contador()),
         ],
           child: MaterialApp(
         title: 'Flutter Demo',
