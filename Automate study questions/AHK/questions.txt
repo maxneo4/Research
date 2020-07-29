@@ -1,356 +1,152 @@
 
 nq|q|a
-1
-Write past and meaning of verb "arise"
-arose, surgir
-2
-Write past and meaning of verb "be"
-was / were, ser
-3
-Write past and meaning of verb "beat"
-beat, golpear
-4
-Write past and meaning of verb "become"
-became, convertirse
-5
-Write past and meaning of verb "begin"
-began, comenzar
-6
-Write past and meaning of verb "bet"
-bet/betted, apostar
-7
-Write past and meaning of verb "bite"
-bit, morder
-8
-Write past and meaning of verb "bleed"
-bled, sangrar
-9
-Write past and meaning of verb "blow"
-blew, soplar
-10
-Write past and meaning of verb "break"
-broke, romper
-11
-Write past and meaning of verb "bring"
-brought, traer
-12
-Write past and meaning of verb "build"
-built, construir
-13
-Write past and meaning of verb "buy"
-bought, comprar
-14
-Write past and meaning of verb "catch"
-caught, atrapar
-15
-Write past and meaning of verb "choose"
-chose, elegir
-16
-Write past and meaning of verb "come"
-came, venir
-17
-Write past and meaning of verb "cost"
-cost, costar
-18
-Write past and meaning of verb "creep"
-crept, arrastrarse
-19
-Write past and meaning of verb "cut"
-cut, cortar
-20
-Write past and meaning of verb "deal"
-dealt, dar, repartir
-21
-Write past and meaning of verb "do"
-did, hacer
-22
-Write past and meaning of verb "draw"
-drew, dibujar
-23
-Write past and meaning of verb "dream"
-dreamt/dreamed, soñar
-24
-Write past and meaning of verb "drink"
-drank, beber
-25
-Write past and meaning of verb "drive"
-drove, conducir
-26
-Write past and meaning of verb "eat"
-ate, comer
-27
-Write past and meaning of verb "fall"
-fell, caer
-28
-Write past and meaning of verb "feed"
-fed, alimentar
-29
-Write past and meaning of verb "feel"
-felt, sentir
-30
-Write past and meaning of verb "fight"
-fought, pelear
-31
-Write past and meaning of verb "find"
-found, encontrar
-32
-Write past and meaning of verb "flee"
-fled, huir
-33
-Write past and meaning of verb "fly"
-flew, volar
-34
-Write past and meaning of verb "forget"
-forgot, olvidar
-35
-Write past and meaning of verb "forgive"
-forgave, perdonar
-36
-Write past and meaning of verb "forsake"
-forsook, abandonar
-37
-Write past and meaning of verb "freeze"
-froze, congelar
-38
-Write past and meaning of verb "get"
-got, tener, obtener
-39
-Write past and meaning of verb "give"
-gave, dar
-40
-Write past and meaning of verb "go"
-went, ir
-41
-Write past and meaning of verb "grind"
-ground, moler
-42
-Write past and meaning of verb "grow"
-grew, crecer
-43
-Write past and meaning of verb "hang"
-hung, colgar
-44
-Write past and meaning of verb "have"
-had, tener
-45
-Write past and meaning of verb "hear"
-heard, oír
-46
-Write past and meaning of verb "hide"
-hid, esconderse
-47
-Write past and meaning of verb "hit"
-hit, golpear
 48
-Write past and meaning of verb "hold"
-held, tener, mantener
+Write past and meaning of verb "Find"
+Found, Encontrar
 49
-Write past and meaning of verb "hurt"
-hurt, herir, doler
+Write past and meaning of verb "Flee"
+Fled, Huir
 50
-Write past and meaning of verb "keep"
-kept, guardar
+Write past and meaning of verb "Fling"
+Flung, Arrojar
 51
-Write past and meaning of verb "kneel"
-knelt, arrodillarse
+Write past and meaning of verb "Fly"
+Flew, Volar
 52
-Write past and meaning of verb "know"
-knew, saber
+Write past and meaning of verb "Forbid"
+Forbade, Prohibir
 53
-Write past and meaning of verb "lead"
-led, encabezar
+Write past and meaning of verb "Forecast"
+Forecast, Pronosticar
 54
-Write past and meaning of verb "learn"
-learnt/learned, aprender
+Write past and meaning of verb "Foresee"
+Foresaw, Preveer
 55
-Write past and meaning of verb "leave"
-left, dejar
+Write past and meaning of verb "Foretell"
+Foretold, Predecir
 56
-Write past and meaning of verb "lend"
-lent, prestar
+Write past and meaning of verb "Forget"
+Forgot, Olvidar
 57
-Write past and meaning of verb "let"
-let, dejar
+Write past and meaning of verb "Forgive"
+Forgave, Perdonar
 58
-Write past and meaning of verb "lie"
-lay, yacer
+Write past and meaning of verb "Forsake"
+Forsook, Abandonar
 59
-Write past and meaning of verb "lose"
-lost, perder
+Write past and meaning of verb "Freeze"
+Froze, Congelar
 60
-Write past and meaning of verb "make"
-made, hacer
+Write past and meaning of verb "Get"
+Got, Conseguir
 61
-Write past and meaning of verb "mean"
-meant, significar
+Write past and meaning of verb "Give"
+Gave, Dar
 62
-Write past and meaning of verb "meet"
-met, conocer, encontrar
+Write past and meaning of verb "Go"
+Went, Ir
 63
-Write past and meaning of verb "pay"
-paid, pagar
+Write past and meaning of verb "Grind"
+Ground, Moler
 64
-Write past and meaning of verb "put"
-put, poner
+Write past and meaning of verb "Grow"
+Gre, Cultivar
 65
-Write past and meaning of verb "quit"
-quit/quitted, abandonar
+Write past and meaning of verb "Handwrite"
+Handwrote, Escribir a mano
 66
-Write past and meaning of verb "read"
-read, leer
+Write past and meaning of verb "Hang"
+Hung, Colgar
 67
-Write past and meaning of verb "ride"
-rode, montar, ir
+Write past and meaning of verb "Have"
+Had, Tener
 68
-Write past and meaning of verb "ring"
-rang, llamar por teléfono
+Write past and meaning of verb "Hear"
+Heard, Oír
 69
-Write past and meaning of verb "rise"
-rose, elevar
+Write past and meaning of verb "Hide"
+Hid, Esconderse
 70
-Write past and meaning of verb "run"
-ran, correr
+Write past and meaning of verb "Hit"
+Hit, Golpear
 71
-Write past and meaning of verb "say"
-said, decir
+Write past and meaning of verb "Hold"
+Held, Sostener
 72
-Write past and meaning of verb "see"
-saw, ver
+Write past and meaning of verb "Hurt"
+Hurt, Herir
 73
-Write past and meaning of verb "sell"
-sold, vender
+Write past and meaning of verb "Inlay"
+Inlaid, Incrustar
 74
-Write past and meaning of verb "send"
-sent, enviar
+Write past and meaning of verb "Input"
+Input, Introducir
 75
-Write past and meaning of verb "set"
-set, fijar
+Write past and meaning of verb "Keep"
+Kept, Mantener
 76
-Write past and meaning of verb "sew"
-sewed, coser
+Write past and meaning of verb "Kneel"
+Knelt, Arrodillarse
 77
-Write past and meaning of verb "shake"
-shook, sacudir
+Write past and meaning of verb "Knit"
+Knit, Tejer
 78
-Write past and meaning of verb "shine"
-shone, brillar
+Write past and meaning of verb "Know"
+Knew, Saber
 79
-Write past and meaning of verb "shoot"
-shot, disparar
+Write past and meaning of verb "Lay"
+Laid, Poner
 80
-Write past and meaning of verb "show"
-showed, mostrar
+Write past and meaning of verb "Lead"
+Led, Guiar
 81
-Write past and meaning of verb "shrink"
-shrank/shrunk, encoger
+Write past and meaning of verb "Lean"
+Leant, Inclinarse
 82
-Write past and meaning of verb "shut"
-shut, cerrar
+Write past and meaning of verb "Leap"
+Leapt, Saltar
 83
-Write past and meaning of verb "sing"
-sang, cantar
+Write past and meaning of verb "Learn"
+Learnt, Aprender
 84
-Write past and meaning of verb "sink"
-sank, hundir
+Write past and meaning of verb "Leave"
+Left, Irse
 85
-Write past and meaning of verb "sit"
-sat, sentarse
+Write past and meaning of verb "Lend"
+Lent, Prestar
 86
-Write past and meaning of verb "sleep"
-slept, dormir
+Write past and meaning of verb "Let"
+Let, Permitir
 87
-Write past and meaning of verb "slide"
-slid, deslizar
+Write past and meaning of verb "Lie"
+Lay, Echarse
 88
-Write past and meaning of verb "sow"
-sowed, sembrar
+Write past and meaning of verb "Light"
+Lit, Encender
 89
-Write past and meaning of verb "speak"
-spoke, hablar
+Write past and meaning of verb "Lose"
+Lost, Perder
 90
-Write past and meaning of verb "spell"
-spelt/spelled, deletrear
+Write past and meaning of verb "Make"
+Made, Hacer
 91
-Write past and meaning of verb "spend"
-spent, gastar
+Write past and meaning of verb "Mean"
+Meant, Significar
 92
-Write past and meaning of verb "spill"
-spilt/spilled, derramar
+Write past and meaning of verb "Meet"
+Met, Conocer
 93
-Write past and meaning of verb "split"
-split, partir
+Write past and meaning of verb "Melt"
+Melted, Derretir
 94
-Write past and meaning of verb "spoil"
-spoilt/spoiled, estropear
+Write past and meaning of verb "Mislead"
+Misled, Engañar
 95
-Write past and meaning of verb "spread"
-spread, extenderse
+Write past and meaning of verb "Mistake"
+Mistook, Confundir
 96
-Write past and meaning of verb "stand"
-stood, estar de pie
+Write past and meaning of verb "Misunderstand"
+Misunderstood, Entender mal
 97
-Write past and meaning of verb "steal"
-stole, robar
-98
-Write past and meaning of verb "sting"
-stung, picar
-99
-Write past and meaning of verb "stink"
-stank/stunk, apestar
-100
-Write past and meaning of verb "strike"
-struck, golpear
-101
-Write past and meaning of verb "swear"
-swore, jurar
-102
-Write past and meaning of verb "sweep"
-swept, barrer
-103
-Write past and meaning of verb "swim"
-swam, nadar
-104
-Write past and meaning of verb "take"
-took, tomar
-105
-Write past and meaning of verb "teach"
-taught, enseñar
-106
-Write past and meaning of verb "tear"
-tore, romper
-107
-Write past and meaning of verb "tell"
-told, decir
-108
-Write past and meaning of verb "think"
-thought, pensar
-109
-Write past and meaning of verb "throw"
-threw, lanzar
-110
-Write past and meaning of verb "tread"
-trode, pisar
-111
-Write past and meaning of verb "understand"
-understood, entender
-112
-Write past and meaning of verb "wake"
-woke, despertarse
-113
-Write past and meaning of verb "wear"
-wore, llevar puesto
-114
-Write past and meaning of verb "weave"
-wove, tejer
-115
-Write past and meaning of verb "weep"
-wept, llorar
-116
-Write past and meaning of verb "win"
-won, ganar
-117
-Write past and meaning of verb "wring"
-wrung, retorcer
-118
-Write past and meaning of verb "write"
-wrote, escribir
+Write past and meaning of verb "Mow"
+Mowed, Segar
