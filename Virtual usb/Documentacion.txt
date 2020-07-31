@@ -1,0 +1,15 @@
+=>Programas instalados.
+    *Visual Studio Code => https://code.visualstudio.com/download
+    *.Net Core 3.1 Estable => https://dotnet.microsoft.com/download
+
+
+=>Tutoriales	
+    *API RESTful with ASP.NET Core => https://www.freecodecamp.org/news/an-awesome-guide-on-how-to-build-restful-apis-with-asp-net-core-87b818123e28/
+    *Traductor => https://www.deepl.com/translator
+    *Documentacion ASP.NET => https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1
+    *RESTful Services Parte I => https://www.freecodecamp.org/news/restful-services-part-i-http-in-a-nutshell-aab3bfedd131/
+    *RESTful Services Parte II => https://medium.com/free-code-camp/restful-services-part-ii-constraints-and-goals-530b8f6298b9#.pk4tsd6oz
+
+
+=>Host Gratis para .Net Core 60 Dias
+    * =>https://www.smarterasp.net/
