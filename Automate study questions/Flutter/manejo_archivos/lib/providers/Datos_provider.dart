@@ -9,6 +9,9 @@ class Datos with ChangeNotifier{
 
   set cargar(List D){
     for(int i=1; i<D.length; i+=3){
+      if(D[i]==" " || D[i]==""){
+        i++;
+      }
       _nq.add(D[i]);
       _q.add(D[i+1]);
       _a.add(D[i+2]);
@@ -24,7 +27,7 @@ get Q{
 }
 
 get A{
-  return this._a[p];
+    return this._a[p];
 }
 
 void pos(){

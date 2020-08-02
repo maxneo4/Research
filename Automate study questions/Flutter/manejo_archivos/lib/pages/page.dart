@@ -86,7 +86,7 @@ class _ArchivoPageState extends State<ArchivoPage> {
       // Leer el archivo
       contents = await file.readAsString();
       List D=contents.split("\r\n");
-      D.remove("");
+      D.remove(""); 
       if(!D.contains("nq|q|a")){
         contents = "Archivo de Texto no valido";
       }else{
