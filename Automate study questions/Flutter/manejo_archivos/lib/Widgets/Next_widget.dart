@@ -33,7 +33,7 @@ class Next extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {
-                  if (datos.A.toString().toLowerCase()==answer.answer.toString().toLowerCase()) {
+                  if (_valid(datos.A.toString().toLowerCase(), answer.answer.toString().toLowerCase())) {
                     contador.Right();
                     _mostrarAlert(context,"Correcto");
                   } else {
@@ -49,6 +49,23 @@ class Next extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  bool _valid(String A, String B){
+    List<String> a=A.trim().split(" ");
+    List<String> b=B.trim().split(" ");
+    int t=a.length;
+    if(a.length>b.length || b.length>a.length){
+      return false;
+    }
+          
+    for(int i=0; i<t; i++){
+      if(a[i]!=b[i]){
+        return false;
+      }
+    }
+
+    return true;
   }
 
   void _mostrarAlert(BuildContext context, String a) {
@@ -76,6 +93,14 @@ class Next extends StatelessWidget {
               ],
             ),
             actions: <Widget>[
+              a=="Error"?RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Reintentar"),
+                color: Colors.green,
+              ):new Container(),
+              SizedBox(width: 90,),
               RaisedButton(
                 onPressed: () {
                   answer.notifi();

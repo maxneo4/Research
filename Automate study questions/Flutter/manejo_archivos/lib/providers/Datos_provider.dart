@@ -12,9 +12,11 @@ class Datos with ChangeNotifier{
       if(D[i]==" " || D[i]==""){
         i++;
       }
-      _nq.add(D[i]);
+      if(i<D.length){
+        _nq.add(D[i]);
       _q.add(D[i+1]);
       _a.add(D[i+2]);
+      }
     }
   }
 
