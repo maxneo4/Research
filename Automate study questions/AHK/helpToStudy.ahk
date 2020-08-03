@@ -39,6 +39,7 @@ Loop % nqs.MaxIndex()
 {
 	question := nqs[A_Index]
 	NQ := question.nq
+	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ")"
 	Q := question.q
 	A := question.a
 	if NQ not in %skip% 
@@ -47,7 +48,7 @@ Loop % nqs.MaxIndex()
 return
 
 ValidateQ:
-InputBox, RQ, %NQ%, %Q% 
+InputBox, RQ, %qprogress%, %Q% 
 	if (ErrorLevel != 1) ;not cancel
 	{
 		if(RQ=A)
