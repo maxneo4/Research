@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -10,7 +10,7 @@ props_index = 1
 Loop, read, questions.txt
 {
 	if A_Index = 1
-		skip := A_LoopReadLine
+		onlyAsk := A_LoopReadLine
 	else if A_Index = 2	
 		props := StrSplit(A_LoopReadLine, "|")
 	Else if(StrLen(A_LoopReadLine) > 0 )
@@ -42,7 +42,12 @@ Loop % nqs.MaxIndex()
 	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ")"
 	Q := question.q
 	A := question.a
-	if NQ not in %skip% 
+	if onlyAsk 
+		{
+			if NQ in %onlyAsk%
+			Gosub, ValidateQ
+		}
+	Else
 		Gosub, ValidateQ
 }
 return
@@ -55,7 +60,7 @@ InputBox, RQ, %qprogress%, %Q%
 			MsgBox, , %NQ%, Correcto, 2
 		Else
 			{
-				errorDetail := "Bad: " . RQ . "`r`n" . "Correct: " . A
+				errorDetail := "#Bad`r`n`t" . RQ . "`r`n" . "#Correct`r`n`t" . A
 				MsgBox, , %NQ%, %errorDetail%
 				Gosub, ValidateQ
 			}
