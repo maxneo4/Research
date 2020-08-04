@@ -56,7 +56,9 @@ ValidateQ:
 InputBox, RQ, %qprogress%, %Q% 
 	if (ErrorLevel != 1) ;not cancel
 	{
-		if(RQ=A)
+		formattedRQ := StrReplace(RQ, A_Space, "")
+		formattedA := StrReplace(A, A_Space, "")
+		if(formattedRQ=formattedA)
 			MsgBox, , %NQ%, Correcto, 2
 		Else
 			{
