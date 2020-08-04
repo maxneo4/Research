@@ -56,9 +56,12 @@ ValidateQ:
 InputBox, RQ, %qprogress%, %Q% 
 	if (ErrorLevel != 1) ;not cancel
 	{
+		RegExReplace(RQ, ".*?\w+" , , RQWordsCount, -1, 1)
+		RegExReplace(A, ".*?\w+" , , AWordsCount, -1, 1)
 		formattedRQ := StrReplace(RQ, A_Space, "")
 		formattedA := StrReplace(A, A_Space, "")
-		if(formattedRQ=formattedA)
+
+		if(formattedRQ=formattedA and RQWordsCount=AWordsCount)
 			MsgBox, , %NQ%, Correcto, 2
 		Else
 			{
