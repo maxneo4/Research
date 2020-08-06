@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/pages/page.dart';
+import 'package:manejo_archivos/pages/url_page.dart';
 import 'package:manejo_archivos/providers/Answer_provider.dart';
 import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
+import 'package:manejo_archivos/providers/url_provider.dart';
+import 'package:manejo_archivos/routes/routes.dart';
 import 'package:provider/provider.dart';
 
 
@@ -18,6 +21,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(builder: (context)=>Datos()),
             ChangeNotifierProvider(builder: (context)=>Answer()),
             ChangeNotifierProvider(builder: (context)=>Contador()),
+            ChangeNotifierProvider(builder: (context)=>Url()),
         ],
           child: MaterialApp(
         title: 'Flutter Demo',
@@ -28,6 +32,7 @@ class MyApp extends StatelessWidget {
         ),
               debugShowCheckedModeBanner: false,
         home: ArchivoPage(),
+        routes: getApplicationRoutes(),
       ),
     );
   }

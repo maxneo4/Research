@@ -10,21 +10,21 @@ class Answer_widget extends StatelessWidget {
     final answer = Provider.of<Answer>(context);
     TextEditingController _text = new TextEditingController();
     return Container(
-      height: 50,
-      child: Container(
         child: TextField(
+          textInputAction: TextInputAction.newline,
+          minLines: 1,
+          maxLines: 5,
           controller: _text,
           decoration: InputDecoration(
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
             labelText: 'Respuesta',
+
           ),
           onChanged: (valor) {
             answer.answer = valor;
           },
         ),
-      ),
     );
-
   }
 }

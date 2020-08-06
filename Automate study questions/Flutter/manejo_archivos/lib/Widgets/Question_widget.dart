@@ -15,9 +15,7 @@ class Questions extends StatelessWidget {
   }
 
   Widget pre(context) {
-
     final datos = Provider.of<Datos>(context);
-
     return ListTile(
       title: Text("Pregunta "+datos.Nq+":\n"+datos.Q),
     );
