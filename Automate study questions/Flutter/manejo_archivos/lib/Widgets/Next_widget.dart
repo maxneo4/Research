@@ -131,7 +131,7 @@ class Next extends StatelessWidget {
                   }
                   Navigator.of(context).pop();
                 },
-                child: Text("Siguiente"),
+                child: Text("Siguiente"), 
                 color: Colors.cyan,
               ),
             ],
