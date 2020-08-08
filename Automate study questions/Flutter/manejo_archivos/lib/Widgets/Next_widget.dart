@@ -21,9 +21,14 @@ class Next extends StatelessWidget {
             children: <Widget>[
               RaisedButton(
                 onPressed: () {
-                  contador.Wrong();
-                  datos.pos();
-                  datos.notifi();
+                  if (datos.P.toString() == datos.cant()) {
+                    contador.Jrong();
+                    Navigator.pushNamed(context, "Final");
+                  } else {
+                    contador.Jrong();
+                    datos.pos();
+                    datos.notifi();
+                  }
                 },
                 child: Text("Saltar"),
                 color: Colors.red,
@@ -33,12 +38,15 @@ class Next extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {
-                  if (_valid(datos.A.toString().toLowerCase(), answer.answer.toString().toLowerCase())) {
+                  if (_valid(datos.A.toString().toLowerCase(),
+                      answer.answer.toString().toLowerCase())) {
                     contador.Right();
-                    _mostrarAlert(context,"Correcto");
+                    _mostrarAlert(context, "Correcto");
                   } else {
-                    contador.Wrong();
-                    _mostrarAlert(context,"Error");
+                    if (contador.total() != datos.P) {
+                      contador.Wrong();
+                    }
+                    _mostrarAlert(context, "Error");
                   }
                 },
                 child: Text("Verificar"),
@@ -51,16 +59,16 @@ class Next extends StatelessWidget {
     );
   }
 
-  bool _valid(String A, String B){
-    List<String> a=A.trim().split(" ");
-    List<String> b=B.trim().split(" ");
-    int t=a.length;
-    if(a.length>b.length || b.length>a.length){
+  bool _valid(String A, String B) {
+    List<String> a = A.trim().split(" ");
+    List<String> b = B.trim().split(" ");
+    int t = a.length;
+    if (a.length > b.length || b.length > a.length) {
       return false;
     }
-          
-    for(int i=0; i<t; i++){
-      if(a[i]!=b[i]){
+
+    for (int i = 0; i < t; i++) {
+      if (a[i] != b[i]) {
         return false;
       }
     }
@@ -71,6 +79,7 @@ class Next extends StatelessWidget {
   void _mostrarAlert(BuildContext context, String a) {
     final datos = Provider.of<Datos>(context, listen: false);
     final answer = Provider.of<Answer>(context, listen: false);
+    final cont = Provider.of<Contador>(context, listen: false);
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -78,34 +87,48 @@ class Next extends StatelessWidget {
           return AlertDialog(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)),
-            content: a=="Error"?Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(a,style: TextStyle(color: Colors.red,fontSize: 25),),
-                Text("Incorrecta: "+answer.answer),
-                Text("Correcta: "+datos.A),
-              ],
-            ): Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(a,style: TextStyle(color: Colors.green,fontSize: 25)),
-                Text("Correcta: "+answer.answer),
-              ],
-            ),
+            content: a == "Error"
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        a,
+                        style: TextStyle(color: Colors.red, fontSize: 25),
+                      ),
+                      Text("Incorrecta: " + answer.answer),
+                      Text("Correcta: " + datos.A),
+                    ],
+                  )
+                : Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(a,
+                          style: TextStyle(color: Colors.green, fontSize: 25)),
+                      Text("Correcta: " + answer.answer),
+                    ],
+                  ),
             actions: <Widget>[
-              a=="Error"?RaisedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text("Reintentar"),
-                color: Colors.green,
-              ):new Container(),
-              SizedBox(width: 90,),
+              a == "Error"
+                  ? RaisedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text("Reintentar"),
+                      color: Colors.green,
+                    )
+                  : new Container(),
+              SizedBox(
+                width: 90,
+              ),
               RaisedButton(
                 onPressed: () {
-                  answer.notifi();
-                  datos.pos();
-                  datos.notifi();
+                  if (datos.P == datos.cant()) {
+                    Navigator.pushNamed(context, "Final");
+                  } else {
+                    answer.notifi();
+                    datos.pos();
+                    datos.notifi();
+                  }
                   Navigator.of(context).pop();
                 },
                 child: Text("Siguiente"),

@@ -5,7 +5,7 @@ class Datos with ChangeNotifier {
   List _nq = [];
   List _q = [];
   List _a = [];
-  int p = 0;
+  int _p = 0;
 
   set all(String a){
     this._all=a;
@@ -13,6 +13,10 @@ class Datos with ChangeNotifier {
 
   get all{
     return this._all;
+  }
+
+  String cant(){
+    return (_nq.length).toString();
   }
 
   void cargar() {
@@ -52,19 +56,27 @@ class Datos with ChangeNotifier {
   }
 
   get Nq {
-    return this._nq[p];
+    return this._nq[_p];
   }
 
   get Q {
-    return this._q[p];
+    return this._q[_p];
   }
 
   get A {
-    return this._a[p];
+    return this._a[_p];
+  }
+
+  get P {
+    return (_p+1);
+  }
+
+  set P(int a) {
+    this._p=a;
   }
 
   void pos() {
-    p++;
+    _p++;
   }
 
   void notifi() {
@@ -76,6 +88,6 @@ class Datos with ChangeNotifier {
     _q = [];
     _a = [];
     _all="";
-    p = 0;
+    _p = 0;
   }
 }

@@ -14,7 +14,7 @@ class Urlpage extends StatefulWidget {
 class _UrlpageState extends State<Urlpage> {
   String _u = "";
   String a = "Buscar archivo";
-  
+
   @override
   Widget build(BuildContext context) {
     final datos = Provider.of<Datos>(context, listen: false);
@@ -27,9 +27,12 @@ class _UrlpageState extends State<Urlpage> {
         child: Scaffold(
           body: ListView(
             children: <Widget>[
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               TextField(
                 keyboardType: TextInputType.url,
+                focusNode: FocusNode(canRequestFocus: false),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0)),
@@ -45,7 +48,7 @@ class _UrlpageState extends State<Urlpage> {
                   onPressed: () {
                     a = "buscar";
                     datos.reset();
-                    url.mess="";
+                    url.mess = "";
                     setState(() {});
                   },
                   child: Text("Buscar Txt"),
@@ -55,7 +58,12 @@ class _UrlpageState extends State<Urlpage> {
                   ? new Container(
                       child: Text(a),
                     )
-                  : a =="buscar" ? future(_u):allw()
+                  : a == "buscar"
+                      ? future(_u)
+                      : () {
+                          a = "";
+                          allw();
+                        }
             ],
           ),
         ));
@@ -72,6 +80,7 @@ class _UrlpageState extends State<Urlpage> {
             case ConnectionState.active:
               return Container();
             case ConnectionState.waiting:
+              datos.reset();
               return Center(
                 child: CircularProgressIndicator(),
               );
@@ -96,8 +105,7 @@ class _UrlpageState extends State<Urlpage> {
         });
   }
 
-  Widget allw(){
+  Widget allw() {
     return AllWidgets();
   }
-
 }
