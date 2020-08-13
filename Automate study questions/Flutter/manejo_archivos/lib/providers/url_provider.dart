@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -20,7 +21,8 @@ class Url with ChangeNotifier {
     try {
       final http.Response response = await http.get(a);
       if (response.statusCode == 200) {
-        this._text = response.body;
+        //this._text = utf8.decode(response.body.runes.toList());
+        this._text =response.body;
         return response.body;
       } else {
         return "Link no Funciona";

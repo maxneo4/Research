@@ -18,19 +18,22 @@ class AllWidgets extends StatelessWidget {
   }
 
   Widget all(context){
-    return Column(
-      children: <Widget>[
-        _reset(context),
-        Questions(),
-        SizedBox(
-          height: 30,
-        ),
-        Answer_widget(),
-        SizedBox(
-          height: 30,
-        ),
-        Next(),
-      ],
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      child: Column(
+        children: <Widget>[
+          _reset(context),
+          Questions(),
+          SizedBox(
+            height: 30,
+          ),
+          Answer_widget(),
+          SizedBox(
+            height: 30,
+          ),
+          Next(),
+        ],
+      ),
     );
   }
 

@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/Widgets/all_widget.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
 import 'package:manejo_archivos/providers/url_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+
 
 class Urlpage extends StatefulWidget {
   Urlpage({Key key}) : super(key: key);
@@ -46,7 +50,7 @@ class _UrlpageState extends State<Urlpage> {
               Container(
                 child: RaisedButton(
                   onPressed: () {
-                    a = "buscar";
+                    a = "";
                     datos.reset();
                     url.mess = "";
                     setState(() {});
@@ -58,15 +62,20 @@ class _UrlpageState extends State<Urlpage> {
                   ? new Container(
                       child: Text(a),
                     )
-                  : a == "buscar"
-                      ? future(_u)
-                      : () {
-                          a = "";
-                          allw();
-                        }
+                  : cual(_u)
             ],
           ),
         ));
+  }
+
+  Widget cual(String a) {
+    final datos = Provider.of<Datos>(context, listen: false);
+
+    if (datos.Hay) {
+      return allw();
+    } else {
+      return future(a);
+    }
   }
 
   Widget future(String a) {
@@ -92,7 +101,7 @@ class _UrlpageState extends State<Urlpage> {
                   child: Text("Tipo de Dato no funciona"),
                 );
               } else {
-                datos.all = asyncSnapshot.data;
+                datos.all = utf8.decode(asyncSnapshot.data.runes.toList());
                 datos.cargar();
                 return Container(
                   child: AllWidgets(),

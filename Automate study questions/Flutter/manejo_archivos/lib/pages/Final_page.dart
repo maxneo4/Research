@@ -81,8 +81,9 @@ class FinalPage extends StatelessWidget {
             color: Colors.cyan,
             onPressed: () {
               datos.P = 0;
+              datos.notifi();
               cont.reset();
-              Navigator.of(context).pop();
+              Navigator.pop(context);
             }),
         SizedBox(
           width: 15,

@@ -6,6 +6,15 @@ class Datos with ChangeNotifier {
   List _q = [];
   List _a = [];
   int _p = 0;
+  bool _hay=false;
+
+  set Hay(bool a){
+    this._hay=a;
+  }
+
+  get Hay{
+    return this._hay;
+  }
 
   set all(String a){
     this._all=a;
@@ -27,6 +36,7 @@ class Datos with ChangeNotifier {
     }else{
       withQ(D);
     }
+    _hay=true;
   }
 
   void withNQ(List D){
@@ -43,14 +53,16 @@ class Datos with ChangeNotifier {
   }
 
   void withQ(List D){
+    int c=1;
     for (int i = 1; i < D.length; i += 3) {
       if (D[i] == " " || D[i] == "") {
         i++;
       }
       if (i < D.length) {
-        _nq.add((i-1).toString());
+        _nq.add((c).toString());
         _q.add(D[i]);
         _a.add(D[i + 1]);
+        c++;
       }
     }
   }
@@ -89,5 +101,6 @@ class Datos with ChangeNotifier {
     _a = [];
     _all="";
     _p = 0;
+    Hay=false;
   }
 }

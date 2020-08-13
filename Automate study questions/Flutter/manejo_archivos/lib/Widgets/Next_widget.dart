@@ -14,10 +14,10 @@ class Next extends StatelessWidget {
     final contador = Provider.of<Contador>(context, listen: false);
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 60),
       child: Column(
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
                 onPressed: () {
@@ -76,10 +76,13 @@ class Next extends StatelessWidget {
     return true;
   }
 
+  void push(context) {
+    Navigator.pushNamed(context, "Final");
+  }
+
   void _mostrarAlert(BuildContext context, String a) {
     final datos = Provider.of<Datos>(context, listen: false);
     final answer = Provider.of<Answer>(context, listen: false);
-    final cont = Provider.of<Contador>(context, listen: false);
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -91,12 +94,27 @@ class Next extends StatelessWidget {
                 ? Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text("N° " + datos.P.toString()),
+                        ],
+                      ),
                       Text(
                         a,
                         style: TextStyle(color: Colors.red, fontSize: 25),
                       ),
-                      Text("Incorrecta: " + answer.answer),
-                      Text("Correcta: " + datos.A),
+                      Row(
+                        children: <Widget>[
+                          Text("Incorrecta:"),
+                        ],
+                      ),
+                      Text(answer.answer),
+                      Row(
+                        children: <Widget>[
+                          Text("Correcta:"),
+                        ],
+                      ),
+                      Text(datos.A),
                     ],
                   )
                 : Column(
@@ -104,10 +122,29 @@ class Next extends StatelessWidget {
                     children: <Widget>[
                       Text(a,
                           style: TextStyle(color: Colors.green, fontSize: 25)),
-                      Text("Correcta: " + answer.answer),
+                      Text("Correcta: \t" + answer.answer),
                     ],
                   ),
             actions: <Widget>[
+              RaisedButton(
+                onPressed: () {
+                  if (datos.P.toString() == datos.cant()) {
+                    Navigator.pop(context, false);
+                    Navigator.pushNamed(context, "Final");
+                    push(context);
+                  } else {
+                    answer.notifi();
+                    datos.pos();
+                    datos.notifi();
+                  }
+                  Navigator.pop(context, false);
+                },
+                child: Text("Siguiente"),
+                color: Colors.cyan,
+              ),
+              SizedBox(
+                width: 90,
+              ),
               a == "Error"
                   ? RaisedButton(
                       onPressed: () {
@@ -117,23 +154,6 @@ class Next extends StatelessWidget {
                       color: Colors.green,
                     )
                   : new Container(),
-              SizedBox(
-                width: 90,
-              ),
-              RaisedButton(
-                onPressed: () {
-                  if (datos.P == datos.cant()) {
-                    Navigator.pushNamed(context, "Final");
-                  } else {
-                    answer.notifi();
-                    datos.pos();
-                    datos.notifi();
-                  }
-                  Navigator.of(context).pop();
-                },
-                child: Text("Siguiente"),  
-                color: Colors.cyan,
-              ),
             ],
           );
         });
