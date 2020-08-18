@@ -10,6 +10,8 @@ NCorrect = 0
 NWrong = 0
 NSkiped = 0
 BCount = 0
+onlyAsk = 
+tempOnlyAsk = ""
 
 file = questions.txt
 if(A_Args.MaxIndex() > 0)
@@ -43,10 +45,16 @@ Loop, read, %file%
 	}	
 }
 MsgBox, , Begin questions, % "Number of quesions: " . nqs.MaxIndex()
+Gosub, beginTest
+return
+
+beginTest:
 Loop % nqs.MaxIndex()
 {
 	question := nqs[A_Index]
 	NQ := question.nq
+	if !NQ
+		NQ := A_Index
 	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ")"
 	Q := question.q
 	A := question.a
@@ -64,8 +72,19 @@ finalResult =
 %NCorrect% Correct
 %NWrong% Wrong
 %NSkiped% Skiped
+Would you like to retry?
 )
-MsgBox, , Final result, %finalResult%
+MsgBox, 5, Final result, %finalResult%
+IfMsgBox Retry
+    {
+    	onlyAsk := tempOnlyAsk
+    	tempoOnlyAsk := ""
+    	NWrong = 0
+    	NCorrect = 0
+    	NSkiped = 0
+    	Gosub, beginTest
+    }
+
 return
 
 ValidateQ:
@@ -88,7 +107,10 @@ InputBox, RQ, %qprogress%, %Q%
 				errorDetail := "#Bad`r`n`t" . RQ . "`r`n" . "#Correct`r`n`t" . A
 				MsgBox, , %NQ%, %errorDetail%
 				if BCount
-					NWrong++
+					{
+						NWrong++
+						tempOnlyAsk := tempOnlyAsk . "," . NQ
+					}
 				BCount = 0
 				Gosub, ValidateQ
 			}
