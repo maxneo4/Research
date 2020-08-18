@@ -9,10 +9,10 @@ nqs := []
 props_index = 1
 Loop, read, questions.txt
 {
-	if A_Index = 1
-		onlyAsk := A_LoopReadLine
-	else if A_Index = 2	
-		props := StrSplit(A_LoopReadLine, "|")
+	if(!props && InStr(A_LoopReadLine, "|"))
+	{
+		props := StrSplit(A_LoopReadLine, "|")		
+	}
 	Else if(StrLen(A_LoopReadLine) > 0 )
 	{
 		property := props[props_index]		
