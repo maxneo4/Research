@@ -67,14 +67,19 @@ Loop % nqs.MaxIndex()
 	Else
 		Gosub, ValidateQ		
 }
+retryMessage := NWrong > 0 ? "Would you like to retry wrong questions?" : ""
 finalResult =
 (
 %NCorrect% Correct
 %NWrong% Wrong
 %NSkiped% Skiped
-Would you like to retry?
+%retryMessage%
 )
-MsgBox, 5, Final result, %finalResult%
+
+if NWrong > 0 
+	MsgBox, 5, Final result, %finalResult%
+Else
+	MsgBox, , Final result, %finalResult%
 IfMsgBox Retry
     {
     	onlyAsk := tempOnlyAsk
