@@ -1,0 +1,5 @@
+﻿{
+  "description": "Indicara el numero de preguntas acertadas, equivocadas y saltadas. Si al menos una es incorrecta se puede intentar solo estas",
+  "step": 3,
+  "title": "Resultado final"
+}

@@ -1,0 +1,5 @@
+﻿{
+  "description": "De ser incorrecta se motrara la respuesta incluida y la que era correcta, al darle Ok(Enter) automaticamente se volvera a mostrar esta misma.",
+  "step": 0,
+  "title": ""
+}
