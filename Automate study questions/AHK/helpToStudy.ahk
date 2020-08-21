@@ -5,14 +5,24 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 FileEncoding, UTF-8
 
 nqs := []
-
 props_index = 1
-Loop, read, questions.txt
+NCorrect = 0
+NWrong = 0
+NSkiped = 0
+BCount = 0
+onlyAsk = 
+tempOnlyAsk = ""
+
+file = questions.txt
+if(A_Args.MaxIndex() > 0)
+	file := A_Args[1]
+
+Loop, read, %file%
 {
-	if A_Index = 1
-		onlyAsk := A_LoopReadLine
-	else if A_Index = 2	
-		props := StrSplit(A_LoopReadLine, "|")
+	if(!props && InStr(A_LoopReadLine, "|"))
+	{
+		props := StrSplit(A_LoopReadLine, "|")		
+	}
 	Else if(StrLen(A_LoopReadLine) > 0 )
 	{
 		property := props[props_index]		
@@ -35,21 +45,51 @@ Loop, read, questions.txt
 	}	
 }
 MsgBox, , Begin questions, % "Number of quesions: " . nqs.MaxIndex()
+Gosub, beginTest
+return
+
+beginTest:
 Loop % nqs.MaxIndex()
 {
 	question := nqs[A_Index]
 	NQ := question.nq
+	if !NQ
+		NQ := A_Index
 	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ")"
 	Q := question.q
 	A := question.a
+	bCount = 1 ; se habilita contar 
 	if onlyAsk 
 		{
 			if NQ in %onlyAsk%
 			Gosub, ValidateQ
 		}
 	Else
-		Gosub, ValidateQ
+		Gosub, ValidateQ		
 }
+retryMessage := NWrong > 0 ? "Would you like to retry wrong questions?" : ""
+finalResult =
+(
+%NCorrect% Correct
+%NWrong% Wrong
+%NSkiped% Skiped
+%retryMessage%
+)
+
+if NWrong > 0 
+	MsgBox, 5, Final result, %finalResult%
+Else
+	MsgBox, , Final result, %finalResult%
+IfMsgBox Retry
+    {
+    	onlyAsk := tempOnlyAsk
+    	tempoOnlyAsk := ""
+    	NWrong = 0
+    	NCorrect = 0
+    	NSkiped = 0
+    	Gosub, beginTest
+    }
+
 return
 
 ValidateQ:
@@ -62,12 +102,26 @@ InputBox, RQ, %qprogress%, %Q%
 		formattedA := StrReplace(A, A_Space, "")
 
 		if(formattedRQ=formattedA and RQWordsCount=AWordsCount)
-			MsgBox, , %NQ%, Correcto, 2
+			{
+				MsgBox, , %NQ%, Correcto, 2
+				if BCount
+					NCorrect++
+			}
 		Else
 			{
 				errorDetail := "#Bad`r`n`t" . RQ . "`r`n" . "#Correct`r`n`t" . A
 				MsgBox, , %NQ%, %errorDetail%
+				if BCount
+					{
+						NWrong++
+						tempOnlyAsk := tempOnlyAsk . "," . NQ
+					}
+				BCount = 0
 				Gosub, ValidateQ
 			}
+	}else
+	{
+		if BCount
+			NSkiped++
 	}
 return

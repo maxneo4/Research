@@ -1,0 +1,5 @@
+﻿{
+  "description": "Se debe tomar el archivo deseado y arrastralo encima del ejecutable, esto hara que se tome ese archivo de preguntas y no el de por defecto \"questions.txt\"",
+  "step": 6,
+  "title": "Abrir un archivo de preguntas diferentes"
+}

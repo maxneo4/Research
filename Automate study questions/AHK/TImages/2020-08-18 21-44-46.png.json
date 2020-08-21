@@ -1,0 +1,5 @@
+﻿{
+  "description": "Lo primero en el archivo es un encabezado que indica los campos de las preguntas incluidos. en la siquiente imagen \"nq\" equivale a numero de pregunta, por esta razon cada pregunta debemos asignarle el numero que deseemos\n",
+  "step": 7,
+  "title": "Escribiendo el archivo de preguntas"
+}

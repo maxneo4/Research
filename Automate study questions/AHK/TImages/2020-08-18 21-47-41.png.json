@@ -1,0 +1,5 @@
+﻿{
+  "description": "Tambien se puede usar el encabezado \"q|a\", de esta forma no estamos incluyendo el numero de la pregunta (Este se autogenerara) y de esta forma solo es requerido poner la pregunta, seguida de la respuesta en un salto de linea aparte.",
+  "step": 0,
+  "title": ""
+}
