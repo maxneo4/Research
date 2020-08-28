@@ -4,41 +4,39 @@ import 'package:manejo_archivos/Widgets/Next_widget.dart';
 import 'package:manejo_archivos/Widgets/Question_widget.dart';
 import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
+import 'package:manejo_archivos/providers/type_provider.dart';
+import 'package:manejo_archivos/providers/worong_provider.dart';
 import 'package:provider/provider.dart';
 
 class AllWidgets extends StatelessWidget {
   const AllWidgets({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-
-    return Container(
-        child: all(context)
-    );
-  }
-
-  Widget all(context){
+    final tip = Provider.of<Tipo>(context, listen: false);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
           _reset(context),
-          Questions(),
+          Questions(type: tip.Ty,),
           SizedBox(
             height: 30,
           ),
-          Answer_widget(),
+          Answer_widget(type: tip.Ty,),
           SizedBox(
             height: 30,
           ),
-          Next(),
+          Next(type: tip.Ty,),
         ],
       ),
     );
   }
 
-  Widget _reset(context) {
+  Widget all(context) {
+    return Container();
+  }
 
+  Widget _reset(context) {
     return Container(
         alignment: Alignment.bottomLeft,
         child: ButtonTheme(
@@ -58,6 +56,8 @@ class AllWidgets extends StatelessWidget {
   void _Shure(BuildContext context) {
     final datos = Provider.of<Datos>(context);
     final cont = Provider.of<Contador>(context, listen: false);
+    final tipo = Provider.of<Tipo>(context, listen: false);
+    final wron = Provider.of<Wrong>(context, listen: false);
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -78,11 +78,16 @@ class AllWidgets extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {
-                  datos.P = 0;
+                 if(tipo.Ty==false){
+                    datos.P = 0;
                   datos.notifi();
                   cont.reset();
+                 }else{
+                   wron.P=0;
+                   wron.noti();
+                   cont.Wans=0;
+                 }
                   Navigator.of(context).pop();
-
                 },
                 child: Text("si"),
                 color: Colors.green,

@@ -5,7 +5,9 @@ import 'package:manejo_archivos/pages/url_page.dart';
 import 'package:manejo_archivos/providers/Answer_provider.dart';
 import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
+import 'package:manejo_archivos/providers/type_provider.dart';
 import 'package:manejo_archivos/providers/url_provider.dart';
+import 'package:manejo_archivos/providers/worong_provider.dart';
 import 'package:manejo_archivos/routes/routes.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(builder: (context) => Answer()),
         ChangeNotifierProvider(builder: (context) => Contador()),
         ChangeNotifierProvider(builder: (context) => Url()),
+        ChangeNotifierProvider(builder: (context) => Wrong()),
+        ChangeNotifierProvider(builder: (context) => Tipo()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

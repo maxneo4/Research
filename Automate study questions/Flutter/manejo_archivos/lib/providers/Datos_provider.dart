@@ -5,8 +5,9 @@ class Datos with ChangeNotifier {
   List _nq = [];
   List _q = [];
   List _a = [];
-  int _p = 0;
+  int _p = 493;
   bool _hay=false;
+  String _cant="";
 
   set Hay(bool a){
     this._hay=a;
@@ -25,7 +26,15 @@ class Datos with ChangeNotifier {
   }
 
   String cant(){
-    return (_nq.length).toString();
+    return this._cant;
+  }
+
+  set Cant(String a){
+    this._cant=a;
+  }
+
+  get Cant{
+    return this._cant;
   }
 
   void cargar() {
@@ -36,6 +45,7 @@ class Datos with ChangeNotifier {
     }else{
       withQ(D);
     }
+    _cant=(_nq.length).toString();
     _hay=true;
   }
 
@@ -71,12 +81,24 @@ class Datos with ChangeNotifier {
     return this._nq[_p];
   }
 
+  void pnq(int a) {
+    return this._nq[a];
+  }
+
+  void PQ(int a) {
+    return this._q[a];
+  }
+
   get Q {
     return this._q[_p];
   }
 
   get A {
     return this._a[_p];
+  }
+
+  void PA(int a) {
+    return this._a[a];
   }
 
   get P {
@@ -100,7 +122,7 @@ class Datos with ChangeNotifier {
     _q = [];
     _a = [];
     _all="";
-    _p = 0;
+    _p = 493;
     Hay=false;
   }
 }

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/pages/Final_page.dart';
+import 'package:manejo_archivos/pages/Wrone_page.dart';
 import 'package:manejo_archivos/pages/page.dart';
 import 'package:manejo_archivos/pages/questions_page.dart';
 import 'package:manejo_archivos/pages/url_page.dart';
@@ -11,5 +12,7 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'Url': (BuildContext context) => Urlpage(),
     'Ques': (BuildContext context) => Question(),
     'Final': (BuildContext context) => FinalPage(),
+    'Wrong': (BuildContext context) => Wrong_page(),
+
   };
 }

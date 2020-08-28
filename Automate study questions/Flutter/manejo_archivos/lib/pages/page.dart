@@ -4,6 +4,8 @@ import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'dart:io';
 
 import 'package:manejo_archivos/providers/Datos_provider.dart';
+import 'package:manejo_archivos/providers/type_provider.dart';
+import 'package:manejo_archivos/providers/worong_provider.dart';
 import 'package:manejo_archivos/utils/Marchivo_utils.dart';
 import 'package:manejo_archivos/utils/validar_utils.dart';
 import 'package:provider/provider.dart';
@@ -40,6 +42,9 @@ class _ArchivoPageState extends State<ArchivoPage> {
   Widget buttons() {
     final datos = Provider.of<Datos>(context);
     final contador = Provider.of<Contador>(context, listen: false);
+    final tipo = Provider.of<Tipo>(context, listen: false);
+    final wrong = Provider.of<Wrong>(context, listen: false);
+
     return Container(
       padding: EdgeInsets.only(top: 50),
       child: Column(
@@ -52,6 +57,8 @@ class _ArchivoPageState extends State<ArchivoPage> {
             onPressed: () {
               contador.reset();
               datos.reset();
+              wrong.reset();
+              tipo.Ty = false;
               _openFileExplorer();
             },
             color: Colors.cyan,
@@ -64,6 +71,8 @@ class _ArchivoPageState extends State<ArchivoPage> {
             onPressed: () {
               contador.reset();
               datos.reset();
+              wrong.reset();
+              tipo.Ty = false;
               Navigator.pushNamed(context, "Url");
               setState(() {});
             },
@@ -99,7 +108,7 @@ class _ArchivoPageState extends State<ArchivoPage> {
         datos.all = contents;
         datos.cargar();
         Navigator.pushNamed(context, "Ques");
-      }else{
+      } else {
         MarchivoAlert(context);
       }
       setState(() {});

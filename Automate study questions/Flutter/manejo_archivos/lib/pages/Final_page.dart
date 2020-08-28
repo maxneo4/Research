@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
+import 'package:manejo_archivos/providers/type_provider.dart';
+import 'package:manejo_archivos/providers/worong_provider.dart';
 import 'package:provider/provider.dart';
 
 class FinalPage extends StatelessWidget {
@@ -63,6 +65,7 @@ class FinalPage extends StatelessWidget {
               SizedBox(
                 height: 70,
               ),
+              contador.Wans>0? malas(context):new Container(),
               butto(context)
             ],
           )),
@@ -95,6 +98,29 @@ class FinalPage extends StatelessWidget {
               Navigator.pushNamed(context, 'Page');
             }),
       ],
+    );
+  }
+
+  Widget malas(context){
+    final cont = Provider.of<Contador>(context, listen: false);
+    final wrong = Provider.of<Wrong>(context, listen: false);
+    final tip = Provider.of<Tipo>(context, listen: false);
+    return Container(
+      child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RaisedButton(
+            child: Text("Desear reintentar las Incorrectas?"), 
+            color: Colors.cyan, 
+            onPressed: () {
+              tip.Ty=true;
+              wrong.P=0;
+              print(wrong.P);
+              cont.Wans=0;
+              Navigator.pushNamed(context, "Wrong");
+            }),
+        ],
+      ),
     );
   }
 }

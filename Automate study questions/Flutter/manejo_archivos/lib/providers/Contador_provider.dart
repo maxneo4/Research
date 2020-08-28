@@ -5,6 +5,7 @@ class Contador with ChangeNotifier{
   int _aR=0;
   int _aW=0;
   int _aJ=0;
+  int _p=0;
 
   set Rans(int c){
     this._aR=c;
