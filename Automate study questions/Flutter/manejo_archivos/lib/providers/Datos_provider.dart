@@ -5,7 +5,7 @@ class Datos with ChangeNotifier {
   List _nq = [];
   List _q = [];
   List _a = [];
-  int _p = 493;
+  int _p = 0;
   bool _hay=false;
   String _cant="";
 
@@ -122,7 +122,7 @@ class Datos with ChangeNotifier {
     _q = [];
     _a = [];
     _all="";
-    _p = 493;
+    _p = 0;
     Hay=false;
   }
 }
