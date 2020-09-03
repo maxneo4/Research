@@ -73,7 +73,7 @@ class _ArchivoPageState extends State<ArchivoPage> {
               datos.reset();
               wrong.reset();
               tipo.Ty = false;
-              Navigator.pushNamed(context, "Url");
+              Navigator.pushNamed(context, "listurl");
               setState(() {});
             },
             color: Colors.cyan,

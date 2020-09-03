@@ -67,11 +67,12 @@ class Next extends StatelessWidget {
                         : _mostrarAlertW(context, "Correcto");
                   } else {
                     if (contador.total() != datos.P) {
-                      contador.Wrong();
                       if (type == false) {
-                        wrong.Nq = datos.Nq;
-                        wrong.Q = datos.Q;
-                        wrong.A = datos.A;
+                        if (wrong.exite(datos.Nq)==true) {
+                          wrong.Nq = datos.Nq;
+                          wrong.Q = datos.Q;
+                          wrong.A = datos.A;
+                        }
                       }
                     }
                     type == false
@@ -113,6 +114,8 @@ class Next extends StatelessWidget {
   void _mostrarAlert(BuildContext context, String a) {
     final datos = Provider.of<Datos>(context, listen: false);
     final answer = Provider.of<Answer>(context, listen: false);
+    final contador = Provider.of<Contador>(context, listen: false);
+
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -166,6 +169,9 @@ class Next extends StatelessWidget {
                     answer.notifi();
                     datos.pos();
                     datos.notifi();
+                  }
+                  if (a == "Error") {
+                    contador.Wrong();
                   }
                   Navigator.pop(context, false);
                 },

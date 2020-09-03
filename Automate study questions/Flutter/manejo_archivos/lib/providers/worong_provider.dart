@@ -74,4 +74,13 @@ class Wrong with ChangeNotifier {
      _b = [];
      _p = 0;
   }
+
+  bool exite(String a){
+    for(int i=0; i<_nq.length; i++){ 
+      if(_nq[i]==a){
+        return false;
+      }
+    }
+    return true;
+  }
 }

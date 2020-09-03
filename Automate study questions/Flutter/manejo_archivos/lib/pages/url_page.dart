@@ -5,7 +5,6 @@ import 'package:manejo_archivos/Widgets/all_widget.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
 import 'package:manejo_archivos/providers/url_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 
 class Urlpage extends StatefulWidget {
@@ -21,7 +20,6 @@ class _UrlpageState extends State<Urlpage> {
 
   @override
   Widget build(BuildContext context) {
-    final datos = Provider.of<Datos>(context, listen: false);
     final url = Provider.of<Url>(context, listen: false);
 
     return GestureDetector(
@@ -34,35 +32,7 @@ class _UrlpageState extends State<Urlpage> {
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                keyboardType: TextInputType.url,
-                focusNode: FocusNode(canRequestFocus: false),
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
-                  hintText: 'Url',
-                  labelText: 'Url',
-                ),
-                onChanged: (value) {
-                  _u = value;
-                },
-              ),
-              Container(
-                child: RaisedButton(
-                  onPressed: () {
-                    a = "";
-                    datos.reset();
-                    url.mess = "";
-                    setState(() {});
-                  },
-                  child: Text("Buscar Txt"),
-                ),
-              ),
-              a == "Buscar archivo"
-                  ? new Container(
-                      child: Text(a),
-                    )
-                  : cual(_u)
+              cual(url.mess)
             ],
           ),
         ));
@@ -70,7 +40,6 @@ class _UrlpageState extends State<Urlpage> {
 
   Widget cual(String a) {
     final datos = Provider.of<Datos>(context, listen: false);
-
     if (datos.Hay) {
       return allw();
     } else {
