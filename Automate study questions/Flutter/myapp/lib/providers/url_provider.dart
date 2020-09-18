@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,20 +18,16 @@ class Url with ChangeNotifier {
 
   Future<String> cargar(String a) async {
     try {
-      
-      final http.Response response = await http.get('dl3.pushbulletusercontent.com/DZUxo21TNKzOKvYYXSxPFPwwdlz3rbut/questions2.txt');
-      if (response.statusCode == 200) {
-
-        //this._text = utf8.decode(response.body.runes.toList());
-        this._text =response.body;
-
+      final http.Response response = await http.get(a);
+      if(response.statusCode==200){
         return response.body;
-      } else {
-        
+
+      }else{
         return "Link no Funciona";
       }
     } catch (e) {
-      return "Link no Funciona";
+      print(e);
+      return "Se ha produciodo un error";
     }
   }
 
