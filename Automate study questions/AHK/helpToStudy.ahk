@@ -3,6 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 FileEncoding, UTF-8
+SetTitleMatchMode, 2
 
 nqs := []
 props_index = 1
@@ -10,8 +11,19 @@ NCorrect = 0
 NWrong = 0
 NSkiped = 0
 BCount = 0
-onlyAsk = 
-tempOnlyAsk = ""
+IfExist, onlyAsk.txt
+{
+	MsgBox, 4, , Would you like to continue from last session?
+	IfMsgBox, Yes
+		FileRead, onlyAsk, onlyAsk.txt
+	else
+		{
+			onlyAsk = 
+			FileDelete, onlyAsk.txt
+		}
+}
+
+tempOnlyAsk := ""
 
 file = questions.txt
 if(A_Args.MaxIndex() > 0)
@@ -55,7 +67,7 @@ Loop % nqs.MaxIndex()
 	NQ := question.nq
 	if !NQ
 		NQ := A_Index
-	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ")"
+	qprogress := NQ . " (" . A_Index . "/" . nqs.MaxIndex() . ") [HelpToStudy]"
 	Q := question.q
 	A := question.a
 	bCount = 1 ; se habilita contar 
@@ -67,7 +79,7 @@ Loop % nqs.MaxIndex()
 	Else
 		Gosub, ValidateQ		
 }
-retryMessage := NWrong > 0 ? "Would you like to retry wrong questions?" : ""
+retryMessage := NWrong > 0 ? "Would you like to retry *WRONG* questions?" : ""
 finalResult =
 (
 %NCorrect% Correct
@@ -83,13 +95,14 @@ Else
 IfMsgBox Retry
     {
     	onlyAsk := tempOnlyAsk
-    	tempoOnlyAsk := ""
+    	FileAppend, %onlyAsk%, onlyAsk.txt ;store onlyAsk
+    	tempOnlyAsk := ""
     	NWrong = 0
     	NCorrect = 0
     	NSkiped = 0
     	Gosub, beginTest
     }
-
+ExitApp, 0
 return
 
 ValidateQ:
@@ -125,3 +138,9 @@ InputBox, RQ, %qprogress%, %Q%
 			NSkiped++
 	}
 return
+
+#IfWinActive, [HelpToStudy]
+!F4::
+	ExitApp, 0
+return
+#if
