@@ -47,11 +47,9 @@ class _UrlpageState extends State<Urlpage> {
       return future(a);
     }
   }
-
   Widget future(String a) {
     final url = Provider.of<Url>(context, listen: false);
     final datos = Provider.of<Datos>(context, listen: false);
-
     return FutureBuilder(
         future: url.cargar(a),
         builder: (context, asyncSnapshot) {

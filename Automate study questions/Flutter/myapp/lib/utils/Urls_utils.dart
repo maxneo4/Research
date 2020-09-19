@@ -13,7 +13,6 @@ class Urls{
   Future<List<String>> leerUrl() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> counter = prefs.getStringList('datos') ?? [""];
-
     return counter;
   }
 

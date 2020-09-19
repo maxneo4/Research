@@ -17,9 +17,11 @@ class Url with ChangeNotifier {
   }
 
   Future<String> cargar(String a) async {
+    print(a);
     try {
       final http.Response response = await http.get(a);
       if(response.statusCode==200){
+        print(response.body);
         return response.body;
 
       }else{
