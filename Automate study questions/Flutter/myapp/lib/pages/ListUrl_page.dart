@@ -118,7 +118,7 @@ class ListUrl extends StatelessWidget {
               contador.reset();
               datos.reset();
               wrong.reset();
-              url.mess=snapshot[i];
+              url.mess=snapshot[i+1];
               Navigator.pushNamed(context, "Url");
             }),
         decoration: BoxDecoration(
