@@ -56,7 +56,14 @@ Loop, read, %file%
 		}		
 	}	
 }
-MsgBox, , Begin questions, % "Number of quesions: " . nqs.MaxIndex()
+helpText =
+(
+
+----------------------------
+onlyAsk.txt filter questions
+ALT+F4 (Close application)
+)
+MsgBox, , Begin questions, % "Number of quesions: " . nqs.MaxIndex() . helpText
 Gosub, beginTest
 return
 
@@ -102,6 +109,7 @@ IfMsgBox Retry
     	NSkiped = 0
     	Gosub, beginTest
     }
+FileDelete, onlyAsk.txt
 ExitApp, 0
 return
 
