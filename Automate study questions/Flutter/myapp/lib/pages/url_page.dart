@@ -64,17 +64,17 @@ class _UrlpageState extends State<Urlpage> {
             case ConnectionState.none:
               return Container(child: Text("buscando"));
             case ConnectionState.done:
-              //if (asyncSnapshot.data == "Link no Funciona" ) {
-                //return Container(
-                  //child: Text("Tipo de Dato no funciona"),
-                //);
-              //} else {
-                //datos.all = utf8.decode(asyncSnapshot.data.runes.toList());
-                //datos.cargar();
+              if (asyncSnapshot.data == "Link no Funciona" || asyncSnapshot.data == "Se ha produciodo un error" ) {
                 return Container(
-                  child: Text(asyncSnapshot.data),//AllWidgets(),
+                  child: Text("Tipo de Dato no funciona"),
                 );
-              //}
+              } else {
+                datos.all = utf8.decode(asyncSnapshot.data.runes.toList());
+                datos.cargar();
+                return Container(
+                  child: AllWidgets(),
+                );
+              }
           }
           return Container(
             child: Text("buscando"),

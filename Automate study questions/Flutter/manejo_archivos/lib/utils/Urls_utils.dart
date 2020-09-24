@@ -12,7 +12,7 @@ class Urls{
 
   Future<List<String>> leerUrl() async {
     final prefs = await SharedPreferences.getInstance();
-    List<String> counter = prefs.getStringList('datos') ?? [""];
+    List<String> counter = prefs.getStringList('datos') ?? [];
     return counter;
   }
 
@@ -31,6 +31,28 @@ class Urls{
     }
     prefs.setStringList('datos', fin);
 
+  }
+
+}
+
+class StateUrl{
+
+  void guardarState(String url, String questions) async {
+    questions=questions.replaceAll(" ", '').replaceAll("[", '').replaceAll(']', '');
+    List<String> datos=[url,questions];
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('state', datos);
+  }
+
+  Future<List<String>> leerState() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String> counter = prefs.getStringList('state') ?? [];
+    return counter;
+  }
+
+  void borrarState() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('state');
   }
 
 }

@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Url with ChangeNotifier {
   String _text = "";
+  String _pos="";
 
   get mess {
     return this._text;
@@ -11,6 +12,14 @@ class Url with ChangeNotifier {
 
   set mess(String a) {
     this._text = a;
+  }
+
+ get pos {
+    return this._pos;
+  }
+
+  set pos(String a) {
+    this._pos = a;
   }
 
   void notifi() {
@@ -22,12 +31,12 @@ class Url with ChangeNotifier {
       final http.Response response = await http.get(a);
       if (response.statusCode == 200) {
         //this._text = utf8.decode(response.body.runes.toList());
-        this._text =response.body;
         return response.body;
       } else {
         return "Link no Funciona";
       }
     } catch (e) {
+      print('object');
       return "Link no Funciona";
     }
   }

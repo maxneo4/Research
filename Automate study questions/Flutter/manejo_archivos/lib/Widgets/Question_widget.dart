@@ -27,7 +27,7 @@ class Questions extends StatelessWidget {
   Widget preW(context) {
     final wrong = Provider.of<Wrong>(context, listen: false);
     return ListTile(
-      title: Text("Pregunta "+wrong.Nq+":\n"+wrong.Q),
+      title: wrong.nq().isNotEmpty?Text("Pregunta "+wrong.Nq+":\n"+wrong.Q):new Container(),
     );
   }
 

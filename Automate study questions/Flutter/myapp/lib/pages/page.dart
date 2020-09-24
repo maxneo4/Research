@@ -50,20 +50,20 @@ class _ArchivoPageState extends State<ArchivoPage> {
       padding: EdgeInsets.only(top: 50),
       child: Column(
         children: <Widget>[
-          new RaisedButton(
-            child: Text(
-              "Buscar Archivo",
-              style: TextStyle(fontSize: 15),
-            ),
-            onPressed: () {
-              contador.reset();
-              datos.reset();
-              wrong.reset();
-              tipo.Ty = false;
-              _openFileExplorer();
-            },
-            color: Colors.cyan,
-          ),
+          //new RaisedButton(
+          //  child: Text(
+          //    "Buscar Archivo",
+          //    style: TextStyle(fontSize: 15),
+          //  ),
+          //  onPressed: () {
+          //    contador.reset();
+          //    datos.reset();
+          //    wrong.reset();
+          //    tipo.Ty = false;
+          //    _openFileExplorer();
+          //  },
+          //  color: Colors.cyan,
+          //),
           new RaisedButton(
             child: Text(
               "Buscar Archivo Url",

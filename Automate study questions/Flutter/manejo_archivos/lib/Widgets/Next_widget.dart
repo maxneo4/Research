@@ -3,7 +3,9 @@ import 'package:manejo_archivos/providers/Answer_provider.dart';
 import 'package:manejo_archivos/providers/Contador_provider.dart';
 import 'package:manejo_archivos/providers/Datos_provider.dart';
 import 'package:manejo_archivos/providers/type_provider.dart';
+import 'package:manejo_archivos/providers/url_provider.dart';
 import 'package:manejo_archivos/providers/worong_provider.dart';
+import 'package:manejo_archivos/utils/Urls_utils.dart';
 import 'package:provider/provider.dart';
 
 class Next extends StatelessWidget {
@@ -68,7 +70,7 @@ class Next extends StatelessWidget {
                   } else {
                     if (contador.total() != datos.P) {
                       if (type == false) {
-                        if (wrong.exite(datos.Nq)==true) {
+                        if (wrong.exite(datos.Nq) == true) {
                           wrong.Nq = datos.Nq;
                           wrong.Q = datos.Q;
                           wrong.A = datos.A;
@@ -115,6 +117,11 @@ class Next extends StatelessWidget {
     final datos = Provider.of<Datos>(context, listen: false);
     final answer = Provider.of<Answer>(context, listen: false);
     final contador = Provider.of<Contador>(context, listen: false);
+    final url = Provider.of<Url>(context, listen: false);
+
+    final wrong = Provider.of<Wrong>(context, listen: false);
+
+    StateUrl state = new StateUrl();
 
     showDialog(
         context: context,
@@ -162,6 +169,13 @@ class Next extends StatelessWidget {
               RaisedButton(
                 onPressed: () {
                   if (datos.P.toString() == datos.cant()) {
+                    final nq = wrong.nq();
+                    print(nq);
+                    if(nq.isEmpty){
+                      state.borrarState();
+                    }else{
+                      state.guardarState(url.mess, nq.toString());
+                    }
                     Navigator.pop(context, false);
                     Navigator.pushNamed(context, "Final");
                     push(context);
@@ -198,6 +212,11 @@ class Next extends StatelessWidget {
   void _mostrarAlertW(BuildContext context, String a) {
     final worn = Provider.of<Wrong>(context, listen: false);
     final answer = Provider.of<Answer>(context, listen: false);
+    final url = Provider.of<Url>(context, listen: false);
+    final wrong = Provider.of<Wrong>(context, listen: false);
+    final contador = Provider.of<Contador>(context, listen: false);
+    StateUrl state = new StateUrl();
+
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -244,7 +263,14 @@ class Next extends StatelessWidget {
               RaisedButton(
                 onPressed: () {
                   if (worn.P.toString() == worn.Cant) {
+                    final nq = wrong.nq();
                     worn.bor();
+                    print(nq);
+                    if(nq.isEmpty){
+                      state.borrarState();
+                    }else{
+                      state.guardarState(url.mess, nq.toString());
+                    }
                     Navigator.pop(context, false);
                     Navigator.pushNamed(context, "Final");
                     push(context);
@@ -252,6 +278,9 @@ class Next extends StatelessWidget {
                     answer.notifi();
                     worn.Pos();
                     worn.noti();
+                  }
+                  if (a == "Error") {
+                    contador.Wrong();
                   }
                   Navigator.pop(context, false);
                 },

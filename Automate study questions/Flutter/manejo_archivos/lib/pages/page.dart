@@ -5,8 +5,10 @@ import 'dart:io';
 
 import 'package:manejo_archivos/providers/Datos_provider.dart';
 import 'package:manejo_archivos/providers/type_provider.dart';
+import 'package:manejo_archivos/providers/url_provider.dart';
 import 'package:manejo_archivos/providers/worong_provider.dart';
 import 'package:manejo_archivos/utils/Marchivo_utils.dart';
+import 'package:manejo_archivos/utils/Urls_utils.dart';
 import 'package:manejo_archivos/utils/validar_utils.dart';
 import 'package:provider/provider.dart';
 
@@ -78,6 +80,7 @@ class _ArchivoPageState extends State<ArchivoPage> {
             },
             color: Colors.cyan,
           ),
+          _Continue(),
         ],
       ),
     );
@@ -117,5 +120,44 @@ class _ArchivoPageState extends State<ArchivoPage> {
         contents = "Archivo no valido";
       });
     }
+  }
+
+  Widget _Continue() {
+    StateUrl state = new StateUrl();
+    return FutureBuilder(
+        future: state.leerState(),
+        builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
+          final url = Provider.of<Url>(context);
+
+          switch (snapshot.connectionState) {
+            case ConnectionState.active:
+              return Container();
+            case ConnectionState.waiting:
+              return Container();
+            case ConnectionState.none:
+              return Container();
+            case ConnectionState.done:
+              if (snapshot.data.isEmpty) {
+                return Container();
+              } else {
+                if (snapshot.data.isEmpty) {
+                  return Container();
+                } else {
+                  return new RaisedButton(
+                    child: Text(
+                      "Deseas Continuar?",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    onPressed: () {
+                      url.mess=(snapshot.data[0]);
+                      url.pos=snapshot.data[1];
+                      Navigator.pushNamed(context, "continue");
+                    },
+                    color: Colors.cyan,
+                  );
+                }
+              }
+          }
+        });
   }
 }

@@ -81,11 +81,11 @@ class Datos with ChangeNotifier {
     return this._nq[_p];
   }
 
-  void pnq(int a) {
+  String pnq(int a) {
     return this._nq[a];
   }
 
-  void PQ(int a) {
+  String PQ(int a) {
     return this._q[a];
   }
 
@@ -97,7 +97,7 @@ class Datos with ChangeNotifier {
     return this._a[_p];
   }
 
-  void PA(int a) {
+  String PA(int a) {
     return this._a[a];
   }
 

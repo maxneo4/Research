@@ -65,12 +65,12 @@ class ListUrl extends StatelessWidget {
             );
           case ConnectionState.none:
             return Center(
-              child: Text("no has hecho niguna convercion"),
+                child: Text("Aun no tienes ninguna Url"),
             );
           case ConnectionState.done:
-            if (snapshot.data.length==0) {
+            if (snapshot.data.isEmpty) {
               return Center(
-                child: Text("no has hecho niguna convercion"),
+                child: Text("Aun no tienes ninguna Url"),
               );
             } else {
               return Container(
@@ -91,6 +91,7 @@ class ListUrl extends StatelessWidget {
     final wrong = Provider.of<Wrong>(context, listen: false);
     TextStyle title=TextStyle(fontSize: 25, fontWeight: FontWeight.bold,);
     TextStyle data=TextStyle(fontSize: 20,);
+    StateUrl state= new StateUrl();
 
     final List<Widget> urls = [];
     for (int i = 0; i < snapshot.length; i += 2) {
@@ -114,6 +115,7 @@ class ListUrl extends StatelessWidget {
               datos.reset();
               wrong.reset();
               url.mess=snapshot[i + 1];
+              state.borrarState();
               Navigator.pushNamed(context, "Url");
             }),
         decoration: BoxDecoration(

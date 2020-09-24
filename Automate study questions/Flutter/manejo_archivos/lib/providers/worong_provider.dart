@@ -15,6 +15,10 @@ class Wrong with ChangeNotifier {
     this._nq.add(a);
   }
 
+  List nq(){
+    return this._nq;
+  }
+
   get Nq {
     return this._nq[_p];
   }
