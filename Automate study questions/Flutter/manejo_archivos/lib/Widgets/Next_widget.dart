@@ -132,6 +132,7 @@ class Next extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0)),
             content: a == "Error"
                 ? Column(
+                  
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Row(
