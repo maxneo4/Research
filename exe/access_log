@@ -1,0 +1,101 @@
+platform.wondershare.com - - [19/Sep/2020:22:02:42 -0500] "GET / HTTP/1.1" 200 1151
+platform.wondershare.com - - [19/Sep/2020:22:02:43 -0500] "GET /favicon.png HTTP/1.1" 200 917
+platform.wondershare.com - - [19/Sep/2020:22:02:43 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [19/Sep/2020:22:02:43 -0500] "GET /main.dart.js HTTP/1.1" 200 1811083
+platform.wondershare.com - - [19/Sep/2020:22:02:44 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [19/Sep/2020:22:02:44 -0500] "GET /assets/fonts/MaterialIcons-Regular.otf HTTP/1.1" 200 919252
+platform.wondershare.com - - [19/Sep/2020:22:02:44 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [19/Sep/2020:22:02:44 -0500] "GET /assets/packages/cupertino_icons/assets/CupertinoIcons.ttf HTTP/1.1" 200 93644
+platform.wondershare.com - - [19/Sep/2020:22:04:39 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:04:39 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:04:39 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:05:33 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [19/Sep/2020:22:05:33 -0500] "GET /favicon.ico HTTP/1.1" 403 -
+platform.wondershare.com - - [19/Sep/2020:22:05:40 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:05:40 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:05:40 -0500] " " 400 -
+platform.wondershare.com - - [19/Sep/2020:22:07:28 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:23:00 -0500] "GET / HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:23:01 -0500] "GET /main.dart.js HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:23:01 -0500] "GET /assets/FontManifest.json HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:23:01 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:01:23:01 -0500] "GET /assets/packages/cupertino_icons/assets/CupertinoIcons.ttf HTTP/1.1" 200 93644
+platform.wondershare.com - - [20/Sep/2020:01:24:54 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [20/Sep/2020:01:24:57 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:25:08 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:25:47 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:26:56 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [20/Sep/2020:01:27:11 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:33:41 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:34:02 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [20/Sep/2020:01:34:09 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:35:50 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:01:35:58 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:37:46 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] "GET / HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] "GET /main.dart.js HTTP/1.1" 200 1811427
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:38:14 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6095
+platform.wondershare.com - - [20/Sep/2020:01:38:16 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [20/Sep/2020:01:38:16 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:38:24 -0500] "GET /main.dart.js HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:38:25 -0500] "GET /assets/FontManifest.json HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:01:38:25 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6095
+platform.wondershare.com - - [20/Sep/2020:01:40:20 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:48:21 -0500] "GET /portugues.txt HTTP/1.1" 200 257
+platform.wondershare.com - - [20/Sep/2020:01:48:48 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:48:48 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] "GET /main.dart.js HTTP/1.1" 200 1811427
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6095
+platform.wondershare.com - - [20/Sep/2020:01:51:01 -0500] "GET /assets/packages/cupertino_icons/assets/CupertinoIcons.ttf HTTP/1.1" 200 93644
+platform.wondershare.com - - [20/Sep/2020:01:51:08 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:52:50 -0500] "GET /main.dart.js HTTP/1.1" 200 1811427
+platform.wondershare.com - - [20/Sep/2020:01:52:50 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [20/Sep/2020:01:52:50 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [20/Sep/2020:01:52:50 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:52:50 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:01:54:28 -0500] "GET /main.dart.js HTTP/1.1" 200 1811421
+platform.wondershare.com - - [20/Sep/2020:01:54:29 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [20/Sep/2020:01:54:29 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [20/Sep/2020:01:54:29 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:01:54:29 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:01:56:24 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:02:00:37 -0500] "GET / HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:37 -0500] "GET /main.dart.js HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:37 -0500] "GET /assets/FontManifest.json HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:37 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:02:00:40 -0500] "GET / HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:40 -0500] "GET /main.dart.js HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:40 -0500] "GET /assets/FontManifest.json HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:00:40 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] "GET / HTTP/1.1" 304 -
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] "GET /main.dart.js HTTP/1.1" 200 1801128
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] " " 400 -
+platform.wondershare.com - - [20/Sep/2020:02:01:48 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [20/Sep/2020:02:03:44 -0500] " " 400 -
+platform.wondershare.com - - [23/Sep/2020:08:53:23 -0500] "GET /questions2 HTTP/1.1" 302 -
+platform.wondershare.com - - [23/Sep/2020:08:53:23 -0500] "GET /questions2/ HTTP/1.1" 403 -
+platform.wondershare.com - - [23/Sep/2020:08:53:23 -0500] "GET /favicon.ico HTTP/1.1" 403 -
+platform.wondershare.com - - [23/Sep/2020:08:53:46 -0500] "GET /questions2 HTTP/1.1" 302 -
+platform.wondershare.com - - [23/Sep/2020:08:53:46 -0500] "GET /questions2/ HTTP/1.1" 403 -
+platform.wondershare.com - - [23/Sep/2020:08:53:50 -0500] "GET / HTTP/1.1" 200 1151
+platform.wondershare.com - - [23/Sep/2020:08:53:51 -0500] "GET /main.dart.js HTTP/1.1" 200 1801128
+platform.wondershare.com - - [23/Sep/2020:08:53:51 -0500] "GET /assets/FontManifest.json HTTP/1.1" 200 208
+platform.wondershare.com - - [23/Sep/2020:08:53:52 -0500] "GET /flutter_service_worker.js HTTP/1.1" 200 6042
+platform.wondershare.com - - [23/Sep/2020:08:53:52 -0500] "GET /icons/Icon-192.png HTTP/1.1" 200 5292
+platform.wondershare.com - - [23/Sep/2020:08:53:52 -0500] "GET /favicon.png HTTP/1.1" 200 917
+platform.wondershare.com - - [23/Sep/2020:08:53:52 -0500] "GET /assets/fonts/MaterialIcons-Regular.otf HTTP/1.1" 200 919252
+platform.wondershare.com - - [23/Sep/2020:08:53:52 -0500] "GET /assets/packages/cupertino_icons/assets/CupertinoIcons.ttf HTTP/1.1" 200 93644
+platform.wondershare.com - - [23/Sep/2020:08:54:02 -0500] "GET /questions2.txt HTTP/1.1" 200 203
+platform.wondershare.com - - [23/Sep/2020:08:55:48 -0500] " " 400 -
+platform.wondershare.com - - [23/Sep/2020:08:55:48 -0500] " " 400 -
+platform.wondershare.com - - [23/Sep/2020:08:55:48 -0500] " " 400 -
+platform.wondershare.com - - [23/Sep/2020:08:55:48 -0500] " " 400 -
+platform.wondershare.com - - [23/Sep/2020:08:55:58 -0500] " " 400 -

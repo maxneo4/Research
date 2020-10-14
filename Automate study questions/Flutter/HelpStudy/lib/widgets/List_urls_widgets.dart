@@ -13,7 +13,7 @@ class ListUrls extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 10,
+          height: 40,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +61,7 @@ class ListUrls extends StatelessWidget {
               } else {
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  height: queryData.size.height - 180,
+                  height: queryData.size.height - 240,
                   child: ListView(
                     children: urls(snapshot.data, context),
                   ),
@@ -93,7 +93,7 @@ class ListUrls extends StatelessWidget {
                 snapshot[i],
                 style: TextStyle(fontSize: 25),
               ),
-              Text(snapshot[i + 1]),
+              Text(snapshot[i + 1], textAlign: TextAlign.center, style: TextStyle(color: Colors.black38),),
               snapshot[i + 2].toString().length != 0
                   ? Text(snapshot[i + 2])
                   : new Container(),
