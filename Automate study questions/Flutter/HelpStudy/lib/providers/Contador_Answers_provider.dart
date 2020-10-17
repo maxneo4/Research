@@ -1,52 +1,66 @@
-
-
-
 import 'package:flutter/cupertino.dart';
 
-class ContadorAnswer with ChangeNotifier{
+class ContadorAnswer with ChangeNotifier {
+  int _corrects = 0;
+  List<int> _incorrects = [];
+  int _jumps = 0;
 
-  int _corrects=0;
-  List<int> _incorrects=[];
-  int _jumps=0;
-
-  get Corrects{
+  get Corrects {
     return this._corrects;
   }
 
-  get Incorrects{
+  get Incorrects {
     return this._incorrects;
   }
 
-  set Incorrects(List<int> a){
-    this._incorrects=a;
+  set Incorrects(List<int> a) {
+    this._incorrects = a;
   }
 
-  get Jumps{
+  void deco(String nq) {
+    this._incorrects = [];
+    
+    if (nq != "") {
+      final data = nq.split(", ");
+      data.forEach((element) {
+        _incorrects.add(int.parse(element));
+      });
+    }
+  }
+
+  set Corrects(int a) {
+    this._corrects = a;
+  }
+
+  set Jumps(int a) {
+    this._jumps = a;
+  }
+
+  get Jumps {
     return this._jumps;
   }
 
-  void SumCorrects(){
+  void SumCorrects() {
     this._corrects++;
   }
 
-  void SumIncorrects(int a){
-    if(!this._incorrects.contains(a)){
+  void SumIncorrects(int a) {
+    if (!this._incorrects.contains(a)) {
       this._incorrects.add(a);
     }
   }
 
-  void ResIncorrects(){
+  void ResIncorrects() {
     this._incorrects.removeLast();
   }
 
-  void SumJumps(){
+  void SumJumps() {
     this._jumps++;
   }
 
-  void reset(){
-    _corrects=0;
-    _incorrects=[];
-    _jumps=0;
+  void reset() {
+    _corrects = 0;
+    _incorrects = [];
+    _jumps = 0;
   }
-
 }

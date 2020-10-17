@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/providers/Contador_Answers_provider.dart';
 import 'package:manejo_archivos/providers/Numero_Question_provider.dart';
+import 'package:manejo_archivos/utils/Saves_utils.dart';
 import 'package:provider/provider.dart';
 
 class Final extends StatelessWidget {
@@ -74,6 +75,8 @@ class Final extends StatelessWidget {
   Widget butto(context) {
     final contador = Provider.of<ContadorAnswer>(context, listen: false);
     final numeros = Provider.of<NumeroQuestion>(context, listen: false);
+    SaveState state = new SaveState();
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -84,6 +87,7 @@ class Final extends StatelessWidget {
               numeros.p=0;
               numeros.notifi();
               contador.reset();
+              state.reset();
               Navigator.popAndPushNamed(context, "questions");
             }),
         SizedBox(
@@ -93,6 +97,7 @@ class Final extends StatelessWidget {
             child: Text("Finalizar"), 
             color: Colors.cyan, 
             onPressed: () {
+              state.borrar();
               contador.reset();
               Navigator.popAndPushNamed(context, 'main');
             }),

@@ -6,7 +6,7 @@ import 'package:manejo_archivos/providers/Numero_Question_provider.dart';
 import 'package:manejo_archivos/utils/Saves_utils.dart';
 import 'package:provider/provider.dart';
 
-void cargar_data(BuildContext context, url, nq) {
+void cargar_data(BuildContext context, url, preguntas, pos) {
   final data = Provider.of<Data>(context, listen: false);
   final numeros = Provider.of<NumeroQuestion>(context, listen: false);
   showDialog(
@@ -18,18 +18,25 @@ void cargar_data(BuildContext context, url, nq) {
           future: new LeerUrls().cargar(url).then((value) {
             if (value != 'error' && value != '404') {
               data.reset();
-              numeros.p=0;
+              numeros.p = 0;
               value = utf8.decode(value.runes.toList());
               List<String> respose = value.split("\r\n");
               respose.removeWhere((element) => element == '');
               data.cargar(respose, respose.first.length > 4);
-              if (nq == '') {
-                numeros.deco(montar(data.Tam()));
+              if (preguntas != "") {
+                numeros.p = pos;
+                numeros.deco(preguntas);
+                if (numeros.tam() == (pos + 1)) {
+                  Navigator.popAndPushNamed(context, 'final');
+                } else {
+                  Navigator.popAndPushNamed(context, 'questions');
+                }
               } else {
-                numeros.deco(nq);
+                numeros.p = pos;
+                numeros.deco(montar(data.Tam()));
+                Navigator.popAndPushNamed(context, 'questions');
               }
-              Navigator.popAndPushNamed(context, 'questions');
-            }else{
+            } else {
               Navigator.pop(context);
             }
           }),
@@ -49,7 +56,7 @@ void cargar_data(BuildContext context, url, nq) {
                   return new Container(
                     child: Text(snapshot.data),
                   );
-                }else{
+                } else {
                   return new Container();
                 }
             }

@@ -18,8 +18,8 @@ class LeerUrls {
 }
 
 class SavesUrls {
-  void guardarUrl(String title, String url, String numerPreg) async {
-    List<String> datos = [title, url, numerPreg];
+  void guardarUrl(String title, String url) async {
+    List<String> datos = [title, url];
     final prefs = await SharedPreferences.getInstance();
     List<String> counter = prefs.getStringList('Urls') ?? [];
     prefs.setStringList('Urls', datos + counter);
@@ -36,15 +36,86 @@ class SavesUrls {
     final prefs = await SharedPreferences.getInstance();
     List<String> counter = prefs.getStringList('Urls') ?? [];
     if (counter.isNotEmpty) {
-      for (int i = 0; i < counter.length; i += 3) {
+      for (int i = 0; i < counter.length; i += 2) {
         if (counter[i] != title) {
           fin.add(counter[i]);
           fin.add(counter[i + 1]);
-          fin.add(counter[i + 2]);
         }
       }
     }
     prefs.setStringList('Urls', fin);
+  }
+
+}
+
+class SaveState{
+
+  void guardarName(String name, String url, String type) async {
+    List<String> datos = [type, name, url,"","0","0","0",""];
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('state', datos);
+  }  
+  
+  //type, name, url, malas, buenas, saltadas, pos, preguntas
+
+  void guardarMalas(String malas)async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    //print("sin datos"+counter.toString()+"  "+counter[6]);
+    counter[3]=malas;
+    //print("con datos"+counter.toString()+"  "+counter[2]);
+    prefs.setStringList('state', counter);
+  }
+
+  void guardarBuenas(String buenas)async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    counter[4]=buenas;
+    prefs.setStringList('state', counter);
+  }
+
+  void guardarSaltadas(String saltadas)async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    counter[5]=saltadas;
+    prefs.setStringList('state', counter);
+  }
+
+  void guardarPos(String pos)async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    //print("sin datos"+counter.toString()+"  "+counter[5]);
+    counter[6]=pos;
+    //print("con datos"+counter.toString());
+    prefs.setStringList('state', counter);
+  }
+
+  void guardarPreguntas(String preguntas)async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    counter[7]=preguntas;
+    prefs.setStringList('state', counter);
+    //print(counter);
+  }
+
+  Future<List<dynamic>> leerDatos() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    return counter;
+  }
+
+  void borrar() async{
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('state');
+  }
+
+  void reset() async{
+    final prefs = await SharedPreferences.getInstance();
+    List<dynamic> counter = prefs.getStringList('state') ?? [];
+    counter[3]="";
+    counter[4]="0";
+    counter[5]="0";
+    prefs.setStringList('state', counter);
   }
 
 }

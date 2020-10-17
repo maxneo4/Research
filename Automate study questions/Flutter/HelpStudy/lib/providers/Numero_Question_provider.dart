@@ -9,7 +9,6 @@ class NumeroQuestion with ChangeNotifier{
 
   List<int> deco(String nq){
     _Nq=[];
-    _p=0;
     final data=nq.split(", ");
     data.forEach((element) {
       _Nq.add(int.parse(element));
@@ -44,6 +43,10 @@ class NumeroQuestion with ChangeNotifier{
 
   int tam(){
     return _Nq.length;
+  }
+
+  List<int> todas(){
+    return this._Nq;
   }
 
 }

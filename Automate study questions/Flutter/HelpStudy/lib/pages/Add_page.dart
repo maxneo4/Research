@@ -62,7 +62,7 @@ class AddPage extends StatelessWidget {
         color: Colors.red,
         child: Text("Agregar", style: TextStyle(fontWeight: FontWeight.bold),),
         onPressed: () {
-          saves.guardarUrl(title, url, '');
+          saves.guardarUrl(title, url);
           Navigator.pushNamed(context, "main");
         }
       ),

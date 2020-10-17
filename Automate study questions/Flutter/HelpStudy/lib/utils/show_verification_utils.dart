@@ -3,6 +3,7 @@ import 'package:manejo_archivos/providers/Answer_provider.dart';
 import 'package:manejo_archivos/providers/Contador_Answers_provider.dart';
 import 'package:manejo_archivos/providers/Data_provider.dart';
 import 'package:manejo_archivos/providers/Numero_Question_provider.dart';
+import 'package:manejo_archivos/utils/Saves_utils.dart';
 import 'package:provider/provider.dart';
 
 void show(context) {
@@ -92,6 +93,8 @@ Widget typeCorrect(context) {
   final answer = Provider.of<Answer>(context, listen: false);
   final contador = Provider.of<ContadorAnswer>(context, listen: false);
 
+  SaveState state = new SaveState();
+
   TextStyle style = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
   return Container(
@@ -126,6 +129,7 @@ Widget typeCorrect(context) {
                   contador.SumCorrects();
                   answer.Ans = "";
                   numero.sum();
+                  state.guardarBuenas(contador.Corrects.toString());
                   if (ultima(context)) {
                     Navigator.popAndPushNamed(context, 'final');
                   } else {
@@ -151,7 +155,9 @@ Widget typeIncorrect(context) {
   final contador = Provider.of<ContadorAnswer>(context, listen: false);
   contador.SumIncorrects(numero.p);
   TextStyle style = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-
+  SaveState state = new SaveState();
+  List<int> malas=contador.Incorrects;
+  state.guardarMalas(malas.join(', '));
   return Container(
     padding: EdgeInsets.symmetric(vertical: 30),
     decoration: BoxDecoration(

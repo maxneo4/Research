@@ -55,7 +55,7 @@ class ListUrls extends StatelessWidget {
               if (snapshot.data.isEmpty) {
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  height: queryData.size.height - 180,
+                  height: queryData.size.height - 240,
                   child: Center(child: Text("No tienes ninguna ruta agregada")),
                 );
               } else {
@@ -74,6 +74,7 @@ class ListUrls extends StatelessWidget {
   List<Widget> urls(List<dynamic> snapshot, context) {
     List<Widget> listUrls = [];
     SavesUrls save = new SavesUrls();
+    SaveState state = new SaveState();
     for (int i = 0; i < snapshot.length; i += 3) {
       final Temp = InkWell(
         onLongPress: () {
@@ -81,7 +82,8 @@ class ListUrls extends StatelessWidget {
           Navigator.pushNamedAndRemoveUntil(context, 'main', (route) => false);
         },
         onTap: () {
-          cargar_data(context, snapshot[i+1], snapshot[i+2]);
+          state.guardarName(snapshot[i],snapshot[i+1], 'url');
+          cargar_data(context, snapshot[i+1],"", 0);
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
@@ -94,9 +96,6 @@ class ListUrls extends StatelessWidget {
                 style: TextStyle(fontSize: 25),
               ),
               Text(snapshot[i + 1], textAlign: TextAlign.center, style: TextStyle(color: Colors.black38),),
-              snapshot[i + 2].toString().length != 0
-                  ? Text(snapshot[i + 2])
-                  : new Container(),
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:manejo_archivos/pages/Principal_page.dart';
+import 'package:manejo_archivos/pages/main_page.dart';
 import 'package:manejo_archivos/providers/Answer_provider.dart';
 import 'package:manejo_archivos/providers/Contador_Answers_provider.dart';
 import 'package:manejo_archivos/providers/Data_provider.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
 
       ],
         debugShowCheckedModeBanner: false,
-        home: Principal_page(),
+        home: Main(),
         routes: getApplicationRoutes(),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manejo_archivos/providers/Contador_Answers_provider.dart';
 import 'package:manejo_archivos/providers/Numero_Question_provider.dart';
+import 'package:manejo_archivos/utils/Saves_utils.dart';
 import 'package:manejo_archivos/utils/show_verification_utils.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,11 @@ class NextButtons extends StatelessWidget {
     final numero = Provider.of<NumeroQuestion>(context);
     final contador = Provider.of<ContadorAnswer>(context);
 
+    void _StateSave() {
+      SaveState state = new SaveState();
+      state.guardarSaltadas(contador.Jumps.toString());
+    }
+
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 60),
         child: Row(
@@ -19,10 +25,11 @@ class NextButtons extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 contador.SumJumps();
-                  numero.sum();
+                numero.sum();
+                _StateSave();
                 if (ultima(context)) {
                   Navigator.popAndPushNamed(context, 'final');
-                }else{
+                } else {
                   numero.notifi();
                 }
               },
